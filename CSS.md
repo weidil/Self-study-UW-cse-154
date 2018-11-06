@@ -39,15 +39,6 @@
        
     ...
 
-* ## W3C CSS Validator
-    ```
-    <p>
-    <a target="_blank" href="http://jigsaw.w3.org/css-validator/">
-        <img src="http://jigsaw.w3.org/css-validator/images/vcss"
-            alt="Valid CSS!" />
-    </a>
-    </p>   
-    ```
 
 * ## CSS `pseudo-classes`
     ```

@@ -14,7 +14,8 @@
   </html>
   ```
 
-* Page Title: `<title>` placed within the `<head>` of the page.  
+* ## Page Title: 
+  `<title>` placed within the `<head>` of the page.  
   Displayed in the web browser's title bar and when bookmarking the page, otherwise not visible to the user as page content  
   ```
   <title>
@@ -22,21 +23,23 @@
   </title>
   ```
 
-* Paragraph: `<p>` placed in the body of the page
+* ## Paragraph:
+   `<p>` placed in the body of the page
   ```
   <p>
   ....
   </p>
   ```
 
-* Headings: `<h1>,<h2>,<h3>,<h4>,<h5>,<h6>`  headings to separate major areas of page
+* ## Headings:
+  `<h1>,<h2>,<h3>,<h4>,<h5>,<h6>`  headings to separate major areas of page
   ```
   <h1> ...</h1>
   <h2> ...</h2>
   <h3> ...</h3>
   ```
 
-* `<header>` and `<footer>`  
+* ## `<header>` and `<footer>`  
   `<header>`tags usually contain one or more <h1-6> elements, maybe a logo, and authorship information  
   `<footer>`tags might contain site map links, authorship information, copyright information, etc.  
   ```
@@ -46,7 +49,7 @@
   ```
   Note: not to be confused with the `<head>` tag, the `<header>` is designed to contain headings for a document  
 
-* `<article>` and `<section>`  
+* ## `<article>` and `<section>`  
   `<article>` tag is a standalone piece of content  
   `<section>` tag is a piece of content that does not make sense on it's own  
   ```
@@ -63,7 +66,7 @@
   </section>
   </article>
   ```
-* Horicontal rule:`<hr>`  
+* ## Horicontal rule:`<hr>`  
   a horizontal line to viusally separate sections of a page
   ```
   <p>First paragraph</p>
@@ -72,7 +75,8 @@
   <hr>
   <p>Third paragraph</p>
   ```
-* Links:`<a>` links,or"anchors", to other pages(inline)
+* ## Links:
+  `<a>` links,or"anchors", to other pages(inline)
   ```
   <p>
     Search for it on <a href="http://www.google.com/">Google</a>!
@@ -85,7 +89,7 @@
   Anchors are inline elements; must be placed in a block element such as `<p>` or `<h1>`  
   
   
-* Images:`<img>`
+* ## Images:`<img>`
   ```
   <img src="img/koalafications.jpg" alt="Koalified koala">
   ```
@@ -101,7 +105,8 @@
     ```
     If placed in an `<a>` anchor tag, the image becomes a link
 
-* Line Break: `<br />` forces a line break in the middle of a block element
+* ## Line Break: 
+  `<br />` forces a line break in the middle of a block element
   ```
   <p>
     The woods are lovely, dark and deep, <br> 
@@ -113,7 +118,7 @@
   Warning: Don't over-use `<br>` (guideline: >= 2 in a row is bad, better to not use any)
 
   `<br>` tags should not be used to separate paragraphs or used multiple times in a row to create spacing  
-* Phrase elements: `<em>`, `<strong>`
+* ## Phrase elements: `<em>`, `<strong>`
   `<em>`: emphasized text
   `<strong>`: strongly emphasized text
   ```
@@ -122,7 +127,7 @@
   </p>
   ```
   
-* Unordered List: `<ul>`, `<li>`
+* ## Unordered List: `<ul>`, `<li>`
   `<ul>` represents a bulleted list of items
   `<li>` represents a single item within the list
   ```
@@ -132,7 +137,7 @@
     <li>No problem</li>
   </ul>
   ```
-* Ordered List: `<ol>`
+* ## Ordered List: `<ol>`
   `<ol>` represents a numbered list of items
   ```
   <p>RIAA business model:
@@ -143,7 +148,7 @@
     </ol>
   </p>
   ```
-* Definition List: `<dl>`, `<dt>`, `<dd>`
+* ## Definition List: `<dl>`, `<dt>`, `<dd>`
   `<dl>` represents a list of definitions of terms
   `<dt>` represents each term, and `<dd>` its definition
   ```
@@ -180,10 +185,39 @@
   * Inline quotation: `<q>` a short quotation  
   `<p>Quoth the Raven, <q>Nevermore.</q></p>`  
   Using `<q>` allows us to apply CSS styles to quotations  
-* Favorites icon ("favicon")  
+* ## Favorites icon ("favicon")  
   ` <link href="filename" type="MIME type" rel="shortcut icon" />` template  
   `<link href="yahoo.gif" type="image/gif" rel="shortcut icon" />` example  
-  The `link` tag, placed in the `head` section, attaches another file to the page
+  The `link` tag, placed in the `head` section, attaches another file to the page  
+* ## Form Elements: `<input>`
+  ```
+  <!-- 'q' happens to be the name of Google's required paramter -->
+  <input type="text" name="q" value="Colbert Report" />
+  <input type="submit" value="Booyah!" />  
+  ```
+  * ### `<input>` text fields
+    ```
+    <input type="text" size="10" maxlength="8" /> NetID <br />
+    <input type="password" size="16" /> Password
+    <input type="submit" value="Log In!" />
+    ```
+* ## Form Elements: Text boxes: `<textarea>`
+    ```
+    <textarea rows="4" cols="20">
+    Type your comments here.
+    </textarea>
+    ```
+* ## **Document Object Model(DOM)**
+  A set of JavaScript objeects that represent each element on the page   
+  Each tag in a page corresponds to a JavaScript DOM object  
+  JS code can talk to these objects to examine elements' state
+    * e.g. see whether a box is checked
+
+  State can be changed  
+    * e.g. insert some new text into a `div`
+  
+  Styles can be changed
+    * e.g. make a pragraph red
  
   
 
