@@ -1,8 +1,14 @@
 body {
-    background-color: red;
+    background-color: black;
+    color: aliceblue;
 }
 
 header{
     text-align: center;
-    text-decoration-color: aqua;
+    color: aliceblue;
+}
+
+.me{
+    width: 10%;
+    height: 10%;
 }
