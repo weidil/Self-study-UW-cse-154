@@ -154,3 +154,127 @@ Wraps all of file's code in an anonymous function that is declared and immediate
 0 global symbols will be introduced!  
 
 The variables and functions defined by code canot be messed with externally  
+
+## Timers: used to delay or set intervals for executing functions
+* ### Setting a timer
+    Both `setTimeout` and `setInterval` return an ID representing the timer
+    * This ID be passed to `clearTimeout`/`Interval` later to stop the timer
+* `setTimeout` Example
+    ```
+    //HTML
+    <button id="clickme">Click me!</button>
+    <span id="outputText"></span>
+
+    //JS
+    window.onload = function() {
+    document.getElementById("clickme").onclick = delayedMessage;
+    };
+
+    function delayedMessage() {
+    document.getElementById("outputText").innerHTML = "Wait for it...";
+    setTimeout(sayBooyah, 5000);
+    }
+
+    function sayBooyah() { // called when the timer goes off
+    document.getElementById("outputText").innerHTML = "BOOYAH!";
+    }   
+    ```
+* `setInterval` Example
+    ```
+    let timer = null; // stores ID of interval timer
+    function delayMsg2() { 
+        timer = setInterval(mowgli, 1000);
+    }
+
+    function mowgli() {
+    document.getElementById("outputText").innerHTML += "Mowgli!"
+    }    
+    ```
+* `clearInterval` Example
+    ```
+    let timer = null; // stores ID of interval timer
+    function toggleDelayMessage() { 
+    if (timer === null) {
+        timer = setInterval(mowgli, 1000);
+    } else {
+        clearInterval(timer);
+        timer = null;
+    }
+    }
+
+    function mowgli() {
+    document.getElementById("outputText").innerHTML += "Mowgli!"
+    }
+    ```
+## The `innerHTML` Property 
+    //HTML
+    <button onclick="addText();">Click me!</button>
+    <span id="output">Hello </span>
+    //JS
+    function addText() {
+    let span = document.getElementById("output");
+    span.innerHTML += " ... goodbye";
+    }
+Can change the text inside most elements by setting the `innerHTML` property
+
+## Mouse Event Example
+    //HTML
+    <pre id="target">Move the mouse over me!</pre>
+
+    //JS
+    window.onload = function() {
+        let target = document.getElementById("target");
+        target.onmousemove = target.mousedown = showCoords;
+    };
+
+    function showCoords(event) {
+     document.getElementById("target").innerHTML =
+        "screen : (" + event.screenX + ", " + event.screenY + ")\n"
+        +  "client : (" + event.clientX + ", " + event.clientY + ")\n"
+        +  "button : (" + event.button;    
+## Key Event Example
+    document.getElementById("textbox").onkeydown = textKeyDown;
+    ...
+    function textKeyDown(event) {
+        let key = String.fromCharCode(event.keyCode);
+        if (key == 's' && event.altKey) {
+            alert("Save the document!");
+            this.value = this.value.split("").join("-");
+        }
+    }
+Each time you push down any key, even a modifier such as Alt or Ctrl, the `keydown` event fires
+
+If you hold down the key, the `keydown` event fires repeatedly
+
+`keypress` event is a bit flakier and inconsistent across browsers
+* Some Useful Keycodes
+  
+    |Keyboard Key | Event Keycode |
+    | ------ | ------ |
+    |Backspace|	8|
+    |Tab|	9|
+    |Enter|	13|
+    |Escape	|27|
+    |Page Up, Page Down, End, Home	|33, 34, 35, 36|
+    |Left, Up, Right, Down	|37, 38, 39, 40|
+    |Insert, Delete|	45, 46|
+    |Window/Command|	91|
+    |F1-F12|	112-123|
+
+## Stopping an Event, example
+    //HTML
+    <form id="exampleform" action="http://foo.com/foo.php">...</form>
+
+    //JS
+    window.onload = function() {
+        let form = document.getElementById("exampleform");
+        form.onsubmit = checkData;
+    };
+
+    function checkData(event) {
+        if (document.getElement("state").length != 2) {
+            alert("Error, invalid city/state."); // show error message
+            event.preventDefault();
+            return false; // stop form submission
+        }
+    }    

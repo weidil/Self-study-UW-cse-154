@@ -1,5 +1,5 @@
 # Cascading Style Sheets(CSS)
-* ## `<link>`  
+## `<link>`  
     ```
     <head>
     ...
@@ -9,7 +9,7 @@
     ```
     CSS describes the appearance and layout of information on a web page (as opposed to HTML, which describes the content)
 
-* ## Basic CSS Rule Syntax
+## Basic CSS Rule Syntax
     ```
     selector {
     property: value;
@@ -28,7 +28,7 @@
     A rule selector specifies HTML elements and applies style properties
     * A selector of `*` selects all elements
 
-* ## CSS Properties:  
+## CSS Properties:  
     **Colors**  
     **Fonts**  
     **text-align**: `left, right, center` or `justify`  
@@ -40,14 +40,13 @@
     ...
 
 
-* ## CSS `pseudo-classes`
+## CSS `pseudo-classes`
     ```
     a:link    { color: #FF0000; } /* unvisited link */
     a:visited { color: #00FF00; } /* visited link */
     a:hover   { color: #FF00FF; } /* mouse over link */
     ```
-
-* ## `id` and `class`  
+ ## `id` and `class`  
     ### `id`  
     Unique identifier for an element  
     Only allowed one `id` value per page  
@@ -62,3 +61,22 @@
     <p id="product-133337" class="product">Cat mug</p>v   
     ```
     Both paragraphs have the same class (`product`), but each has its own ID
+## Styling Form Elements
+```
+//template
+element[attribute="value"] {
+  property: value;
+  property: value;
+  ...
+  property: value;
+}
+
+//example
+input[type="text"] {
+  background-color: yellow;
+  font-weight: bold;
+}s
+```
+Attribute selector: matches only elements that have a paticular attribute value
+
+Useful for controls because many share the same element(input)

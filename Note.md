@@ -16,8 +16,8 @@
 It's called Cascading Style Sheets because the properties of an element cascade together in this order:  
     1.  Browser's default styles(reference)  
     2.  External style sheets (in a `<link>` tag)  
-    3.  Internal style sheets (in a `<style>` tag in the page header  
-    4.  inline style (the `style` attribute of an HTML element
+    3.  Internal style sheets (in a `<style>` tag in the page header)  
+    4.  inline style (the `style` attribute of an HTML element)
 ## W3C CSS Validator
     ```
     <p>

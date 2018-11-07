@@ -1,5 +1,6 @@
 # HTML
-* `<head>` tag describes the page  
+ ## `<head>`, `<body>` and `<DOCTYPE>`
+  `<head>` tag describes the page  
   `<body>` tag contains the page's content  
   `DOCTYPE` tag tells the browser to interpret out page's code as HTML5, the latest/greatest version of the language
   ```
@@ -14,7 +15,7 @@
   </html>
   ```
 
-* ## Page Title: 
+ ## Page Title: 
   `<title>` placed within the `<head>` of the page.  
   Displayed in the web browser's title bar and when bookmarking the page, otherwise not visible to the user as page content  
   ```
@@ -23,7 +24,7 @@
   </title>
   ```
 
-* ## Paragraph:
+ ## Paragraph:
    `<p>` placed in the body of the page
   ```
   <p>
@@ -31,7 +32,7 @@
   </p>
   ```
 
-* ## Headings:
+ ## Headings:
   `<h1>,<h2>,<h3>,<h4>,<h5>,<h6>`  headings to separate major areas of page
   ```
   <h1> ...</h1>
@@ -39,7 +40,7 @@
   <h3> ...</h3>
   ```
 
-* ## `<header>` and `<footer>`  
+ ## `<header>` and `<footer>`  
   `<header>`tags usually contain one or more <h1-6> elements, maybe a logo, and authorship information  
   `<footer>`tags might contain site map links, authorship information, copyright information, etc.  
   ```
@@ -49,7 +50,7 @@
   ```
   Note: not to be confused with the `<head>` tag, the `<header>` is designed to contain headings for a document  
 
-* ## `<article>` and `<section>`  
+ ## `<article>` and `<section>`  
   `<article>` tag is a standalone piece of content  
   `<section>` tag is a piece of content that does not make sense on it's own  
   ```
@@ -66,7 +67,7 @@
   </section>
   </article>
   ```
-* ## Horicontal rule:`<hr>`  
+ ## Horicontal rule:`<hr>`  
   a horizontal line to viusally separate sections of a page
   ```
   <p>First paragraph</p>
@@ -75,7 +76,7 @@
   <hr>
   <p>Third paragraph</p>
   ```
-* ## Links:
+ ## Links:
   `<a>` links,or"anchors", to other pages(inline)
   ```
   <p>
@@ -89,7 +90,7 @@
   Anchors are inline elements; must be placed in a block element such as `<p>` or `<h1>`  
   
   
-* ## Images:`<img>`
+  ## Images:`<img>`
   ```
   <img src="img/koalafications.jpg" alt="Koalified koala">
   ```
@@ -105,7 +106,7 @@
     ```
     If placed in an `<a>` anchor tag, the image becomes a link
 
-* ## Line Break: 
+ ## Line Break: 
   `<br />` forces a line break in the middle of a block element
   ```
   <p>
@@ -118,7 +119,7 @@
   Warning: Don't over-use `<br>` (guideline: >= 2 in a row is bad, better to not use any)
 
   `<br>` tags should not be used to separate paragraphs or used multiple times in a row to create spacing  
-* ## Phrase elements: `<em>`, `<strong>`
+ ## Phrase elements: `<em>`, `<strong>`
   `<em>`: emphasized text
   `<strong>`: strongly emphasized text
   ```
@@ -127,7 +128,7 @@
   </p>
   ```
   
-* ## Unordered List: `<ul>`, `<li>`
+ ## Unordered List: `<ul>`, `<li>`
   `<ul>` represents a bulleted list of items
   `<li>` represents a single item within the list
   ```
@@ -137,7 +138,7 @@
     <li>No problem</li>
   </ul>
   ```
-* ## Ordered List: `<ol>`
+ ## Ordered List: `<ol>`
   `<ol>` represents a numbered list of items
   ```
   <p>RIAA business model:
@@ -148,7 +149,7 @@
     </ol>
   </p>
   ```
-* ## Definition List: `<dl>`, `<dt>`, `<dd>`
+ ## Definition List: `<dl>`, `<dt>`, `<dd>`
   `<dl>` represents a list of definitions of terms
   `<dt>` represents each term, and `<dd>` its definition
   ```
@@ -169,7 +170,7 @@
     </dd>
   </dl>
   ```
-* Quotations: `<blockquote>` a quotation
+ Quotations: `<blockquote>` a quotation
   ```
   <p>
     As Lincoln said in his famous Gettysburg Address:
@@ -185,11 +186,11 @@
   * Inline quotation: `<q>` a short quotation  
   `<p>Quoth the Raven, <q>Nevermore.</q></p>`  
   Using `<q>` allows us to apply CSS styles to quotations  
-* ## Favorites icon ("favicon")  
+ ## Favorites icon ("favicon")  
   ` <link href="filename" type="MIME type" rel="shortcut icon" />` template  
   `<link href="yahoo.gif" type="image/gif" rel="shortcut icon" />` example  
   The `link` tag, placed in the `head` section, attaches another file to the page  
-* ## Form Elements: `<input>`
+ ## Form Elements: `<input>`
   ```
   <!-- 'q' happens to be the name of Google's required paramter -->
   <input type="text" name="q" value="Colbert Report" />
@@ -201,24 +202,110 @@
     <input type="password" size="16" /> Password
     <input type="submit" value="Log In!" />
     ```
-* ## Form Elements: Text boxes: `<textarea>`
+ ## Form Elements: Text boxes: `<textarea>`
     ```
     <textarea rows="4" cols="20">
     Type your comments here.
     </textarea>
     ```
-* ## **Document Object Model(DOM)**
+ ## **Document Object Model(DOM)**
   A set of JavaScript objeects that represent each element on the page   
   Each tag in a page corresponds to a JavaScript DOM object  
   JS code can talk to these objects to examine elements' state
-    * e.g. see whether a box is checked
+  * e.g. see whether a box is checked
 
   State can be changed  
-    * e.g. insert some new text into a `div`
+  * e.g. insert some new text into a `div`
   
   Styles can be changed
-    * e.g. make a pragraph red
- 
+  * e.g. make a pragraph red
+## Checkboxes:`<input>`
+yes/no choices that can be checked and unchecked(inline)
+```
+<input type="checkbox" name="lettuce"> Lettuce
+<input type="checkbox" name="tomato" checked="checked"> Tomato
+<input type="checkbox" name="pickles" checked="checked"> Pickles
+```
+None, 1 or many checkboxes can be checked at same time
+## Radio buttons: `<input>`
+sets of mutually exclusive choices(inline)
+```
+<input type="radio" name="cc" value="visa" checked="checked"> Visa
+<input type="radio" name="cc" value="mastercard"> MasterCard
+<input type="radio" name="cc" value="amex"> American Express
+```
+Grouped by name attribute(only one can be checked at a time) 
+
+Must specify a value for each one
+## Text labels: `<label>`
+    <label>
+      <input type="radio" name="cc" value="visa" checked="checked"> Visa
+    </label>
+    <label>
+      <input type="radio" name="cc" value="mastercard"> MasterCard
+    </label>
+    <label>
+      <input type="radio" name="cc" value="amex"> American Express
+    </label>
+associates nearby text with control, so can click text to active control
+
+can be used with checkboxed or radio button
+
+label element can be targeted by CSS style rules
+
+## Drop-down list: `<select>`, `<option>`
+menus of choices that collapse and expand(inline)
+```
+<select name="favorite-character">
+  <option>Rob</option>
+  <option>John</option>
+  <option selected="selected">Ayra</option>
+  <option>Sansa</option>
+</select>
+```
+Option element represents each choice
+
+Select optional attributes: disabled, multiple, size
+
+Optional selected attribute sets which one is initially chosen
+* Using `<select>` For Lists
+  ```
+  <select name="favorite-character[]" size="3" multiple="multiple">
+    <option>Rob</option>
+    <option>John</option>
+    <option selected="selected">Ayra</option>
+    <option>Sansa</option>
+  </select>
+  ```
+  Optional multiple attribute allows selecting multiple items with shift- or ctrl-click
+
+  Must declare parameter's name with `[]` if you allow multiple selections
+
+  Option tags can be set to be initially selected
+## Option Groups`<optgroup>`
+```
+<select name="favorite-character">
+  <optgroup label="Major Characters">
+    <option>John</option>
+    <option selected="selected">Ayra</option>
+  </optgroup>
+  <optgroup label="Minor Characters">
+    <option>Rob</option>
+    <option>Sansa</option>
+  </optgroup>
+</select>
+```
+## Gourping Input: `<fieldset>`, `<legend>`
+groups of input fields with optional caption(block)
+```
+<fieldset>
+  <legend>Credit cards:</legend>
+  <input type="radio" name="cc" value="visa" checked="checked"> Visa
+  <input type="radio" name="cc" value="mastercard"> MasterCard
+  <input type="radio" name="cc" value="amex"> American Express
+</fieldset>
+```
+Fieldset groups related input fields, adds aborder; legend supplies a caption
   
 
 
