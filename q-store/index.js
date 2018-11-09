@@ -1,3 +1,4 @@
+/*global fetch checkStatus*/
 "use strict";
 (function(){
     
@@ -6,68 +7,85 @@
     function qsa(selector){ return document.querySelectorAll(selector) }
     
     window.onload = function(){
-        
-        let prodBoxes = qsa("#product_container section");
-        for(let i = 0; i < prodBoxes.length; i++) {
-            prodBoxes[i].onclick = showProductView;
-        }
+        loadProducts();
         
         qs("header").onclick = showProductsView;
     }
     
-    function showProductView() {
-        //insert product information
-        console.log(this.id);
-        if(this.id === "quilt_1"){
-            quilt_1_details();
-        } else if (this.id === "quartz_1"){
-            quartz_1_details();
+    function loadProducts(){
+        fetch("products.json", {credentials: "include"})
+            .then(checkStatus) 
+            .then(JSON.parse)
+            .then(displayProducts)
+            .catch(alert);
+    }
+    
+    function displayProducts(productJson){
+        for(let i = 0; i < productJson.products.length; i++){
+            let productData = productJson.products[i];
+            
+            let section = document.createElement("section");
+            
+            let title = document.createElement("h4");
+            title.innerHTML = productData.name;
+            
+            let imgParagraph = document.createElement("p");
+            let img = document.createElement("img");
+            img.src = "img/" + productData.img;
+            imgParagraph.appendChild(img);
+            
+            let description = document.createElement("p");
+            description.innerHTML = productData.description;
+            
+            section.appendChild(title);
+            section.appendChild(imgParagraph);
+            section.appendChild(description);
+            
+            section.onclick = function(){
+                showProductView(productData);
+            }
+            
+            $("product_container").appendChild(section);
         }
+    }
+    
+    function showProductView(productData) {
+        //insert product information
+        
+        qs("#product h4").innerHTML = productData.name;
+        qs("#product img").src = "img/" + productData.img;
+        $("product_view_description").innerHTML = productData.description;
+        
+        $("reviews").innerHTML = "Loading...";
+        
+        fetch("reviews/" + productData.reviews_file, {credentials: "include"})
+            .then(checkStatus) 
+            .then(JSON.parse)
+            .then(displayReviews)
+            .catch(alert);
+        
+
         
         $("products").classList.add("hidden");
         $("product").classList.remove("hidden");
     }
     
+    function displayReviews(reviewJson){
+        $("reviews").innerHTML = "";
+        
+        let title = document.createElement("h2");
+        title.innerHTML = "Reviews";
+        $("reviews").append(title);
+        
+        for(let i = 0; i < reviewJson.reviews.length; i++){
+            let quote = document.createElement("blockquote");
+            quote.innerHTML = reviewJson.reviews[i];
+            $("reviews").append(quote);
+        }
+    }
+    
     function showProductsView() {
         $("product").classList.add("hidden");
         $("products").classList.remove("hidden");
-    }
-    
-    function quilt_1_details(){
-        qs("#product h4").innerHTML = "Quilt #1";
-        qs("#product img").src = "img/quilt1.jpg";
-        $("product_view_description").innerHTML = "This is a lovely quilt!";
-        
-        $("reviews").innerHTML = "";
-        
-        let title = document.createElement("h2");
-        title.innerHTML = "Reviews";
-        let quote1 = document.createElement("blockquote");
-        quote1.innerHTML = "A perfect quilt! 5 stars!";
-        let quote2 = document.createElement("blockquote");
-        quote2.innerHTML = " It was just scraps of cloth stitched together. " +
-                "Why not make it all one material! 0 stars!";
-        $("reviews").append(title);
-        $("reviews").append(quote1);
-        $("reviews").append(quote2);
-        
-    }
-    
-    function quartz_1_details(){
-        qs("#product h4").innerHTML = "Quarz #1";
-        qs("#product img").src = "img/quartz1.jpg";
-        $("product_view_description").innerHTML = "A nice piece of quartz!";
-        
-        $("reviews").innerHTML = "";
-        
-        let title = document.createElement("h2");
-        title.innerHTML = "Reviews";
-        let quote1 = document.createElement("blockquote");
-        quote1.innerHTML = "Meh. 2.5 stars";
-        let quote2 = document.createElement("blockquote");
-        quote2.innerHTML = "These quartz were not magical! 0 stars!";
-        $("reviews").append(title);
-        $("reviews").append(quote1);
-        $("reviews").append(quote2);
     }
 })();

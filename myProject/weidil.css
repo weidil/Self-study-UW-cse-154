@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro|Press+Start+2P');
+body {
+    background-color: black;
+    color: aliceblue;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Courier New;
+    
+}
+
+h1 {
+    padding-top: 1%;
+	font-family: 'Press Start 2P', cursive;
+}
+
+#mainBody {
+    background-color: black;
+}
+
+h2{
+    font-size: 150%;
+    font-family: 'Press Start 2P', cursive;
+    color: yellow;
+}
+
+.curr{
+    font-size: 110%;
+    
+}
+
+
+header{
+    text-align: center;
+    color: aliceblue;
+    background-color: brown;
+    font-family: Courier New;
+    margin: 0%;
+}
+
+
+.me{
+    width: 30%;
+    height: 30%;
+    display: float;
+    float: left;
+    padding-right: 1%;
+}
+
+a{
+    color: yellow;
+}
+
+footer{
+    text-align: center;
+    padding:10px;
+}
+
+section{
+    padding-bottom: 1%;
+}
+#email{
+    text-decoration: none;
+    color: white;
+}

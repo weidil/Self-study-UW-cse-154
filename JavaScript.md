@@ -278,3 +278,113 @@ If you hold down the key, the `keydown` event fires repeatedly
             return false; // stop form submission
         }
     }    
+
+# Ajax
++ **web application**
+  a dynamic web site that feels like a desktop application
++ **AJAX**
+  a specific style of using JS to call out to the server for more information
++ **Promise**
+  a JS obeject that is useful for dealing with uncertainty in the program
+## Web Applications
+All of the pages that we've made up until now have content, style and behavior.
+
+Web applications are webpages that pull in additional data and information as the user progresses through them, making it feel similar to a desktop application.
+
+Some motivation for makeing web pages into web applications:
++ Better user experience
++ Less data sent across the wire
++ Leads to good software architecture:
+    + Client handles display, servere serves up data
+## Ajax: Asynchronous JavaScriipt and XML
+Using javascript to pull in more content from the server without navigating the page to a new url
+```
+fetch('hidden/data.txt').
+    then(function(response){
+        response.text().then(function(text){
+            alert(text);
+        });
+    });
+```
+
+## Promises
+A JS object that executes some code that has an uncertain outcome
+
+Promises have three states:
+- Pending
+- Fulfilled
+- Rejected
+
+Example:"I promise to post homework"  
+Pending: Not yet posted  
+Fulfilled: Homework posted  
+Rejected: Wrong homework posted, or not posted in time
+
+### Promise example: using a promise
+    let promise = // some Promise....;
+    promise.
+    then( function( params... ) { 
+        // Promise resolved -- handle success
+    } );
+    catch( function( params... ) { 
+        // Promise rejected -- handle failure
+    } );
+
+## JSON: JavaScript Object Notation
+A data format that represents data as a set of JavaScript objects invented by JS guru Douglas Crockford of Yahoo! natively supported by all modern browsers (and libraries to support it in old ones)
+### JavaScript objects
+    let myobj = {
+    fieldName1: value1,
+    ...
+    fieldName: value
+    };
+In JavaScript, can create a new object without creating a "class"
+
+Can add properties to any object even after it is created:
+```
+myobj.field87 = "wubba lubba";
+```
+    let person = {
+        name: "Philip J. Fry",                           // string
+        age: 23,                                         // number
+        "weight": 172.5,                                 // number
+        friends: ["Farnsworth", "Hermes", "Zoidberg"],   // array
+        getBeloved: function() { return this.name + " loves Leela"; }
+    };
+    alert(person["age"]);                  // 23
+    alert(person.weight);                  // 172.5
+    alert(person.friends[2]));             // Zoidberg
+    alert(person.getBeloved());            // Philip J. Fry loves Leela
+
+an object can have methods (function properties) that refer to itself as this 
+can refer to the fields with .fieldName or ["fieldName"] syntax   
+field names can optionally be put in quotes (e.g. weight above) 
+### Examples of JS objects:
++ DOM elements
++ `document`, `window`
++ XMLHttpRequest
++ Promise
+### JavaScript Objects and JSON
+JSON is a way of saving or storing javascript objects.(The technical term is "serializing" which is just a fancy word for turning an object into a savable string of characters)
+
+Browser JSON methods:
++ `JSON.parse(/* JSON string*/)` -- converts JSON string into Javascript object
++ `JSON.stringfy(/* Javascript Object*/)` -- converts a Javascript object into JSON text
+  
+JSON data comes from many scources on the web:
++ web services use JSON to communicate
++ web servers store data as JSON files
++ databases sometimes use JSON to store, query and return data
+
+JSON is the de facto universal format for exchange of data
+
+Valid JSON
+
+
+    {                          // no variable assignment
+    "first_name": 'Bart',    // strings and properties must be quoted
+    'last_name': "Simpson",  // single or double quotes both work
+    "age" : 13,              // numbers can be here without quotes
+    "cowabunga": true        // booleans can be here without quotes
+    }                          // no semicolon at the end
+

@@ -54,4 +54,67 @@ It's called Cascading Style Sheets because the properties of an element cascade 
 
     })();
 
+# Ajax
+## Ajax Code Skeleton
+    //include this code, based on: //https://developers.google.com/web/updates/2015/03/introduction-to-fetch
+    function checkStatus(response) {  
+        if (response.status >= 200 && response.status < 300) {  
+            return response.text();
+        } else {  
+            return Promise.reject(new Error(response.status+": "+response.statusText)); 
+        } 
+    }
+        
+    function callAjax(){
+        let url = ..... // put url string here
+        fetch(url, {credentials: 'include'}) // include credentials for cloud9
+        .then(checkStatus)
+        .then(function(responseText) {
+                //success: do something with the responseText
+            })
+        .catch(function(error) {
+            //error: do something with error
+        });
+    }
+## Ajax Code Skeletion(slight variation)
+    function checkStatus(response) {   
+    ...
+    }
+        
+    function callAjax(){
+        let url = ..... // put url string here
+        fetch(url, {credentials: 'include'}) // include credentials for cloud9
+        .then(checkStatus)
+        .then(handleResponse)
+        .catch(handleError);
+    }
+
+    function handleResponse(responseText){
+        //success: do something with the responseText
+    }
+
+    function handleError(error){
+        //error: do something with error
+    }
+## Ajax Code Skeleton for JSON
+    //include this code, based on: //https://developers.google.com/web/updates/2015/03/introduction-to-fetch
+    function checkStatus(response) {  
+        if (response.status >= 200 && response.status < 300) {  
+            return response.text();
+        } else {  
+            return Promise.reject(new Error(response.status+": "+response.statusText)); 
+        } 
+    }
+        
+    function callAjax(){
+        let url = ..... // put url string here
+        fetch(url, {credentials: 'include'}) // include credentials for cloud9
+        .then(checkStatus)
+        .then(function(responseJSON) {
+                //success: do something with the responseJSON
+            })
+        .catch(function(error) {
+            //error: do something with error
+        });
+    }
 

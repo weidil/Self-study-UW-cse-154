@@ -1,0 +1,59 @@
+{
+    "products": [
+        {
+            "name": "Quilt #1",
+            "img": "quilt1.jpg",
+            "description": "This is a lovely quilt!",
+            "reviews_file": "quilt1.json"
+        },
+        {
+            "name": "Quilt #2",
+            "img": "quilt2.jpg",
+            "description": "This is also a lovely quilt!",
+            "reviews_file": "quilt2.json"
+        },
+        {
+            "name": "Quilt #3",
+            "img": "quilt3.jpg",
+            "description": "This is also a lovely quilt!",
+            "reviews_file": "quilt3.json"
+        },
+        {
+            "name": "Quartz #1",
+            "img": "quartz1.jpg",
+            "description": "A nice piece of quartz!",
+            "reviews_file": "quartz1.json"
+        },
+        {
+            "name": "Quartz #2",
+            "img": "quartz2.jpg",
+            "description": "A nice piece of quartz!",
+            "reviews_file": "quartz2.json"
+        },
+        {
+            "name": "Quartz #3",
+            "img": "quartz3.jpg",
+            "description": "A nice piece of quartz!",
+            "reviews_file": "quartz3.json"
+        },
+        {
+            "name": "Quinoa #1",
+            "img": "quinoa1.png",
+            "description": "Yummy quinoa!",
+            "reviews_file": "quinoa1.json"
+        },
+        {
+            "name": "Quinoa #1",
+            "img": "quinoa2.jpg",
+            "description": "Yummy quinoa!",
+            "reviews_file": "quinoa2.json"
+        },
+        {
+            "name": "Quinoa #3",
+            "img": "quinoa3.jpg",
+            "description": "Yummy quinoa!",
+            "reviews_file": "quinoa3.json"
+        }
+        
+    ]
+}

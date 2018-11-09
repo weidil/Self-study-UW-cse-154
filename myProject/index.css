@@ -1,24 +1,25 @@
+#main {
+	margin:auto;
+	margin-top: 10em;
+	/* border:solid red 2px; */
+	/* width: 5.5em; */
+	width: 220px;
+}
+
 body {
-    background-color: black;
-    color: aliceblue;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    
+	background-color: black;
+	/* font-size: 1.3em; */
+	font-size: 20px;
+	font-family: Courier New;
 }
 
-#mainBody {
-    background-color: black;
-}
-header{
-    text-align: center;
-    color: aliceblue;
-    background-color: brown;
+a {
+	color: white;
+    text-decoration: none;
+    font-size: 24px;
 }
 
-.me{
-    width: 10%;
-    height: 10%;
-    display: float;
-    float: right;
+div {
+	color: white;
+	text-decoration: none;
 }
