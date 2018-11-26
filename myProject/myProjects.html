@@ -10,6 +10,30 @@
 </head>
 <body>
     <p> Have grown safely: </p>
-    <p> <a href="index.html">Back</a></p>
+    <span id = "spanTime"></span>
+    <p> <a href="weidilou.html">Back</a></p>
 </body>
 </html>
+
+<script type="text/javascript">
+var timer = null;
+window.onload = function(){
+    timer = setInterval(show, 100)
+    function show(){
+        var d1 = new Date();
+        var d1Ms = d1.getTime();
+        var d2 = new Date("11 30,1995");
+        var d2Ms = d2.getTime();
+        var differMs = d1Ms - d2Ms;
+		var date = parseInt(differMs/(3600*24*1000));
+		var hours = parseInt((differMs%(3600*24*1000))/(3600*1000));
+		var minutes =parseInt((differMs%(3600*1000))/(60*1000));
+		var seconds = parseInt((differMs%(60*1000))/1000);
+        
+        hours = hours<10? "0" + hours : hours;
+        minutes = minutes<10? "0" + minutes: minutes;
+        seconds = seconds<10? "0" + seconds: seconds;
+        document.getElementById("spanTime").innerHTML = date+"days"+hours+"hours"+minutes+"minutes"+seconds+"seconds"
+    }
+}
+</script>
